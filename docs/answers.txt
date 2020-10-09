@@ -1,0 +1,38 @@
+DATE OF GIT LAB TUTORIALS : (Over the course of a few days) 10/7/20-10/9/20 
+DATE OF GITHUB ACCOUNT CREATION: 10/9/20    
+* Additional info (if neccessary) 
+Github Repository Link: github.com/mllewellyn97/assignment2 
+Linked Bitbucket Account Name: liluzimac  (what i use personally that may appear as the author on commits)
+
+Question 5 (30 pts) :
+1. 
+$ git commit -m "Adding docs folder with status.txt inside with status command before pushing changes"
+[master ead2826] Adding docs folder with status.txt inside with status command before pushing changes
+ 1 file changes, 5 insertions(+)
+ create mode 100644 docs/status.txt
+
+ $ git push origin master
+ Enumerating objects: 5, done.
+ Counting objects: 100% (5/5), done.
+ Delta compression using up to 8 threads
+ Compressing objects: 100% (3/3), done.
+ Writing objects: 100% (4/4), 455 bytes | 151.00 KiB/s, done.
+ Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+ reemote: Resolving deltas: 100% (1/1), completed with 1 local object.
+ To https://github.com/mllewellyn97/assignment2.git
+  04e020e.ead2826 master -> master
+
+2. There have been 9 commits thus far. I used git log and I see that in addition to my three commits, Esteban has commited an additional 6 times.
+3. While i was looking at how many commits have been made in my previous command git log, I was also able to see that my commit pushing the README.md file that I modified the README.md file at approximately 15:09:35. For a specific file at the last revsision you can alternatively use a more advanced command specifiers such as [git log -1 --pretty repopath] 
+4. The first reason for the use of branches is for code modularity. Breaking up portions of code not only allows reusability but additionally creates a formidable and organized project hierarchy for the addition of new features. The second reason to utilize branches is that it allows for error-checking. Keeping all of your code's data in a master repo can open up issues that break master. You can't push broken code to master because then you would not know where to start debugging it.
+5. git log gives you a list of the commit history. Git status will only show you your local changes as compared to the branch you are working on. For example, git log can tell you information about all the commits seen before you, but git status will only tell you the local changes that you have that have not been commit and how they differ from the state of the master branch or branch you are intending on pushing to (the one you have checked out).
+
+6. So, for looking for a specific file in a commit the -p option should be appended to git log as git log -p. This will show the difference introduced in each commit. You can additionally specify a certain number of commits if you have an idea where you are looking, for example git log -p -2 would show the last two with the differences introduced. 
+7. In order to search for a specific word in the commit message you can again use git log but this time with added specifiers such as the following : git log --grep=word     where in our case it would be git log --grep=file.
+
+8. Inheritance - Inheritance is a key component of code resue and modularity. In use of this concept it is the idea of having a parent class in which the child class is able to inherit the methods of the parent, but also can implement and override such methods in addition to their own. By creating default classes we can shorten the workload on creating several classes that are very similar. If classes can all inherit from one default class inheritance can be used to increase productivity.
+  Polymorphism - Polymorphism is the ability for a class to be represented as different instances of that class. For example Polymorphism allows us to be able to determine what characteristics an object or class may have in a given instance through both compile and runtime compilations. Thus, a class can be overloaded to fit into many different attributes. 
+  Encapsulation - This is the idea of bundling data today and restricting direct access to internal components in order to represent a whole instead of managing different individuals parts. Encapsulation allows us to hide sensitive data through controller methods of a given private internal class. 
+
+ 9. The main difference it seems between the Integration Manager Workflow and the Dictator and Lieutenants workflow is that the addition of several lieutenants instead of solely one integration manager to resolve all conflicts. The dictator is the person who pushes the changes to the blessed respository as is the integration manager in the Integration Manager workflow. However, theis method seems to handle conflict resolution in only one place, as dictator can have multiple lietenants that oversee developer changes. It is almost as if there is an additional "check" in place in the dictator and lieutenants Workflow. I would say that the Dictator and Lieutants has a more concise structure. 
+ 10. Well given that there is 100 developers I would hope they would not use a Centralized workflow. The main issue with having a centralized workflow with that many people is that there is no way to know or tell who is pushing and breaking what as i briefly discussed in one of my previous answers. The way i see it- in a corporate workflow there are managers and developers. The managers oversee the product and ensure that there are baselines that can be tested and shown to the customer. (At least in my experience at Lockheed Martin) So ultimately these developers would benefit by the additional checks and balances that are in place when pushing code. Merge conflicts are handled early and concisely, and things arent simply thrown everywhere with no way to revert or fix a change. 
